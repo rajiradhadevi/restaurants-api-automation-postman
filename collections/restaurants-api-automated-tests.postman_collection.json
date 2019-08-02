@@ -1,0 +1,2114 @@
+{
+	"info": {
+		"_postman_id": "f5c2148c-522d-4baf-ba2a-b88950c59b92",
+		"name": "restaurants-api-automated-tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "test data setup",
+			"item": [
+				{
+					"name": "add a new restaurant -restaurant1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "47f80d5a-3cfc-43f5-95a0-a3d509e397a3",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expect no error message \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"   pm.expect(jsonData).to.not.have.property('errorMessage');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"save the id\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property('id');\r",
+									"    pm.environment.set('restaurantId1', jsonData.id);\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"American Restaurant & Bar\",\n    \"rating\": 4.9\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/restaurants",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add a new restaurant -restaurant2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "73122511-3027-4a4c-aeec-e65b3420e5be",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expect no error message \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"   pm.expect(jsonData).to.not.have.property('errorMessage');\r",
+									"});\r",
+									"pm.test(\"save the id\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property('id');\r",
+									"    pm.environment.set('restaurantId2', jsonData.id);\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Martini's Italian restaurant\",\n    \"rating\": 4.8\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/restaurants",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add a new restaurant -restaurant3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bc86316b-2a19-4bf4-8182-f37adb273e81",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expect no error message \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"   pm.expect(jsonData).to.not.have.property('errorMessage');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"save the id\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property('id');\r",
+									"    pm.environment.set('restaurantId3', jsonData.id);\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Little Napoleon French Cuisine\",\n    \"rating\": 4.7\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/restaurants",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add a new restaurant -restaurant4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c72f6037-8177-4958-8923-cd7140de2ec6",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expect no error message \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"   pm.expect(jsonData).to.not.have.property('errorMessage');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"save the id\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property('id');\r",
+									"    pm.environment.set('restaurantId4', jsonData.id);\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Amy's Chinese cuisine\",\n    \"rating\": 4.6\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/restaurants",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add a new restaurant -restaurant5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e8020467-7f4a-4202-8466-a89ca3eb8f03",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expect no error message \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"   pm.expect(jsonData).to.not.have.property('errorMessage');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"save the id\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property('id');\r",
+									"    pm.environment.set('restaurantId5', jsonData.id);\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Bombay Indian cuisine & bar\",\n    \"rating\": 4.5\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/restaurants",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add a new restaurant -restaurant6",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "698fb623-7e8c-4fdd-be13-8eace8ecd9e4",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expect no error message \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"   pm.expect(jsonData).to.not.have.property('errorMessage');\r",
+									"});\r",
+									"pm.test(\"save the id\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property('id');\r",
+									"    pm.environment.set('restaurantId6', jsonData.id);\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Bad Restaurant & Bar\",\n    \"rating\": 4.4\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/restaurants",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tests",
+			"item": [
+				{
+					"name": "Get all 6 restaurants",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "219156ef-cb80-4641-95ad-48041d39c3e2",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expect no error message \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"   pm.expect(jsonData).to.not.have.property('errorMessage');\r",
+									"});\r",
+									"pm.test(\"Expect 6 results\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.be.an('array');\r",
+									"    pm.expect(jsonData.length).to.eql(6);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"check the names of restaurants\", function () {\r",
+									"   let jsonData = pm.response.json();\r",
+									"   pm.expect(pm.response.text()).to.include(\"American Restaurant & Bar\",\"Martini's Italian restaurant\",\"Amy's Chinese cuisine\",\"Bombay Indian cuisine & bar\",\"Bad Restaurant & Bar\");\r",
+									"});\r",
+									"\r",
+									"//TODO: This can be improved - instead of text() - we can loop thru the array and check the names.\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/restaurants",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete restaurant with id 6",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "850f1811-4dea-4912-9288-8ed297ba5afc",
+								"exec": [
+									"let restaurantId6 = pm.environment.get(\"restaurantId6\"); \r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"make sure returned object contains restaurantId to be deleted\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id).to.eql(restaurantId6);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/restaurants/{{restaurantId6}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants",
+								"{{restaurantId6}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all 5 restaurants",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8846f07d-fd74-4c54-9606-7a90b671186c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expect no error message \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"   pm.expect(jsonData).to.not.have.property('errorMessage');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expect 5 results\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.be.an('array');\r",
+									"    pm.expect(jsonData.length).to.eql(5);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"check the names of restaurants\", function () {\r",
+									"   let jsonData = pm.response.json();\r",
+									"   pm.expect(pm.response.text()).to.include(\"American Restaurant & Bar\",\"Martini's Italian restaurant\",\"Amy's Chinese cuisine\",\"Bombay Indian cuisine & bar\");\r",
+									"});\r",
+									"\r",
+									"//TODO: This can be improved - instead of text() - we can loop thru the array and check the names."
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/restaurants",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get restaurant with id 6(neg test)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "51d9fb1c-f92d-48e7-b5ba-642a2080e5fb",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expect an error message \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property('errorMessage');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"error \",function () {\r",
+									"       pm.expect(pm.response.text()).to.include('Restaurant not found');\r",
+									"});\r",
+									"\r",
+									"\r",
+									"   "
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/restaurants/{{restaurantId6}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants",
+								"{{restaurantId6}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update restaurant with id 1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "353c932e-bb70-4bae-95eb-65a191eeacf2",
+								"exec": [
+									"let restaurantId1 = pm.environment.get(\"restaurantId1\");\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"make sure returned object contains same restaurantId \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id).to.eql(restaurantId1);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"make sure returned object contains updated rating \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(pm.response.rating).to.eql(pm.request.rating);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"American Restaurant & Bar\",\n    \"rating\": 4.1\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/restaurants/{{restaurantId1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants",
+								"{{restaurantId1}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update restaurant with id 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7ecad936-c7f8-40d4-9737-7d51d830c74c",
+								"exec": [
+									"let restaurantId2 = pm.environment.get(\"restaurantId2\");\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"make sure returned object contains same restaurantId \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id).to.eql(restaurantId2);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"make sure returned object contains updated rating \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(pm.response.rating).to.eql(pm.request.rating);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Martini's Italian restaurant\",\n    \"rating\": 4.5\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/restaurants/{{restaurantId2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants",
+								"{{restaurantId2}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update restaurant with id 3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "05fc0669-a68b-4ada-89d4-c761129dc5fb",
+								"exec": [
+									"let restaurantId3 = pm.environment.get(\"restaurantId3\");\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"make sure returned object contains same restaurantId \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id).to.eql(restaurantId3);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"make sure returned object contains updated rating \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(pm.response.rating).to.eql(pm.request.rating);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Little Napoleon French Cuisine\",\n    \"rating\": 4.3\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/restaurants/{{restaurantId3}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants",
+								"{{restaurantId3}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update restaurant with id 4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "defd3a89-47ef-49e3-b6a2-a703f6783c01",
+								"exec": [
+									"let restaurantId4 = pm.environment.get(\"restaurantId4\");\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"make sure returned object contains same restaurantId \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id).to.eql(restaurantId4);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"make sure returned object contains updated rating \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(pm.response.rating).to.eql(pm.request.rating);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Amy's Chinese cuisine\",\n    \"rating\": 4.4\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/restaurants/{{restaurantId4}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants",
+								"{{restaurantId4}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update restaurant with id 5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "51b449cf-d662-4003-b989-4f59f37ab63a",
+								"exec": [
+									"let restaurantId5 = pm.environment.get(\"restaurantId5\");\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"make sure returned object contains same restaurantId \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id).to.eql(restaurantId5);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"make sure returned object contains updated rating \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(pm.response.rating).to.eql(pm.request.rating);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Bombay Indian cuisine & bar\",\n    \"rating\": 4.2\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/restaurants/{{restaurantId5}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants",
+								"{{restaurantId5}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update restaurant with id 6(neg test)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0f8a9b93-94d5-421c-b2f5-c6aaca1c8705",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expect an error message \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property('errorMessage');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Bad Restaurant & Bar\",\n    \"rating\": 0.1\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/restaurants/{{restaurantId6}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants",
+								"{{restaurantId6}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all  restaurants",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "956d7a96-5cdd-413f-a7fa-7229a49efaa9",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expect no error message \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"   pm.expect(jsonData).to.not.have.property('errorMessage');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expect 5 results\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.be.an('array');\r",
+									"    pm.expect(jsonData.length).to.eql(5);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"check the names of restaurants\", function () {\r",
+									"   let jsonData = pm.response.json();\r",
+									"   pm.expect(pm.response.text()).to.include(\"American Restaurant & Bar\",\"Martini's Italian restaurant\",\"Amy's Chinese cuisine\",\"Bombay Indian cuisine & bar\");\r",
+									"});\r",
+									"\r",
+									"//TODO: This can be improved - instead of text() - we can loop thru the array and check the names."
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/restaurants",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get restaurant with id  99 (neg test)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "86e4822b-4396-4953-ad1a-81a8006b111c",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expect an error message \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property('errorMessage');\r",
+									"});\r",
+									"pm.test(\"error \",function () {\r",
+									"       pm.expect(pm.response.text()).to.include('Restaurant not found');\r",
+									"});\r",
+									"\r",
+									"//TODO: just look at jsonData.errorMessage property"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/restaurants/99",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants",
+								"99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search restaurants by a non existent search term",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1e191485-f015-48ac-840a-0c0977c2644c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Expect 0 results\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"   \r",
+									"    pm.expect(jsonData.length).to.eql(0);\r",
+									"   //pm.expect(jsonData.length).to.eql(0);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/restaurants/search/All-American",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants",
+								"search",
+								"All-American"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search restaurants by an existent search term",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "736c504f-064f-4c2a-9901-d6c87e9789a5",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expect no error message \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"   pm.expect(jsonData).to.not.have.property('errorMessage');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expect 1 result\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.be.an('array');\r",
+									"    pm.expect(jsonData.length).to.eql(1);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"check the names of restaurant\", function () {\r",
+									"   let jsonData = pm.response.json();\r",
+									"   pm.expect(pm.response.text()).to.include(\"American Restaurant & Bar\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/restaurants/search/American",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants",
+								"search",
+								"American"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search restaurants by a match at beginning",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1ee087f1-898e-4e5f-af70-7fc1870ed128",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expect no error message \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"   pm.expect(jsonData).to.not.have.property('errorMessage');\r",
+									"});\r",
+									"pm.test(\"Expect 2 result\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.be.an('array');\r",
+									"    pm.expect(jsonData.length).to.eql(2);\r",
+									"});\r",
+									"pm.test(\"check the names of restaurant\", function () {\r",
+									"   let jsonData = pm.response.json();\r",
+									"   pm.expect(pm.response.text()).to.include(\"American Restaurant & Bar\");\r",
+									"   pm.expect(pm.response.text()).to.include(\"Amy's Chinese cuisine\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/restaurants/search/Am",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants",
+								"search",
+								"Am"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search restaurants by a match at end",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "75884585-0c21-4ff7-9859-3cc070068283",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expect no error message \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"   pm.expect(jsonData).to.not.have.property('errorMessage');\r",
+									"});\r",
+									"pm.test(\"Expect 2 result\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.be.an('array');\r",
+									"    pm.expect(jsonData.length).to.eql(2);\r",
+									"});\r",
+									"pm.test(\"check the names of restaurant\", function () {\r",
+									"   let jsonData = pm.response.json();\r",
+									"   pm.expect(pm.response.text()).to.include(\"American Restaurant & Bar\");\r",
+									"   pm.expect(pm.response.text()).to.include(\"Bombay Indian cuisine & bar\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/restaurants/search/bar",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants",
+								"search",
+								"bar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search restaurants by a match in the middle",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5e63e000-fec1-4311-865b-5dc215bcfccf",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expect no error message \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"   pm.expect(jsonData).to.not.have.property('errorMessage');\r",
+									"});\r",
+									"pm.test(\"Expect 3 result\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.be.an('array');\r",
+									"    pm.expect(jsonData.length).to.eql(3);\r",
+									"});\r",
+									"pm.test(\"check the names of restaurant\", function () {\r",
+									"   let jsonData = pm.response.json();\r",
+									"   pm.expect(pm.response.text()).to.include(\"Little Napoleon French Cuisine\");\r",
+									"   pm.expect(pm.response.text()).to.include(\"Amy's Chinese cuisine\");\r",
+									"   pm.expect(pm.response.text()).to.include(\"Bombay Indian cuisine & bar\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/restaurants/search/Cuisine",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants",
+								"search",
+								"Cuisine"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search restaurants by a match with special character",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4fc318d3-fc4a-45ac-b525-841c3b732924",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expect no error message \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"   pm.expect(jsonData).to.not.have.property('errorMessage');\r",
+									"});\r",
+									"pm.test(\"Expect 2 result\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.be.an('array');\r",
+									"    pm.expect(jsonData.length).to.eql(2);\r",
+									"});\r",
+									"pm.test(\"check the names of restaurant\", function () {\r",
+									"   let jsonData = pm.response.json();\r",
+									"   pm.expect(pm.response.text()).to.include(\"American Restaurant & Bar\");\r",
+									"   pm.expect(pm.response.text()).to.include(\"Bombay Indian cuisine & bar\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/restaurants/search/& bar",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants",
+								"search",
+								"& bar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search restaurants with search term :'s",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2233eb3a-c2c7-4b0d-9654-7c3044aec176",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expect no error message \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"   pm.expect(jsonData).to.not.have.property('errorMessage');\r",
+									"});\r",
+									"pm.test(\"Expect 2 result\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.be.an('array');\r",
+									"    pm.expect(jsonData.length).to.eql(2);\r",
+									"    });\r",
+									"pm.test(\"check the names of restaurant\", function () {\r",
+									"   let jsonData = pm.response.json();\r",
+									"   pm.expect(pm.response.text()).to.include(\"Martini's Italian restaurant\");\r",
+									"   pm.expect(pm.response.text()).to.include(\"Amy's Chinese cuisine\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/restaurants/search/'s",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants",
+								"search",
+								"'s"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search restaurants with case insensitive",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a38fc0cb-a41c-4923-a8ed-7ade215e9b19",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expect no error message \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"   pm.expect(jsonData).to.not.have.property('errorMessage');\r",
+									"});\r",
+									"pm.test(\"Expect 1 result\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.be.an('array');\r",
+									"    pm.expect(jsonData.length).to.eql(1);\r",
+									"   });\r",
+									"pm.test(\"check the names of restaurant\", function () {\r",
+									"  let jsonData = pm.response.json();\r",
+									"  pm.expect(pm.response.text()).to.include(\"Little Napoleon French Cuisine\");\r",
+									"  });\r",
+									"   "
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/restaurants/search/NAPOLEON",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants",
+								"search",
+								"NAPOLEON"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add a new restaurant",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0a23407b-fb35-458d-ae54-94d084956016",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expect no error message \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"   pm.expect(jsonData).to.not.have.property('errorMessage');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"save the id\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property('id');\r",
+									"    pm.environment.set('restaurantId7', jsonData.id);\r",
+									"\r",
+									"});\r",
+									"pm.test(\"make sure no property called rating is available\", function () {\r",
+									"let jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.not.have.property('rating');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Le Petit French Vietnamese Cuisine\"\n   \n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/restaurants",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search restaurants to include newly added restaurant",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "68e79501-59f5-4f69-911c-f790111584b2",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expect no error message \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"   pm.expect(jsonData).to.not.have.property('errorMessage');\r",
+									"});\r",
+									"pm.test(\"Expect 2 results\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.be.an('array');\r",
+									"    pm.expect(jsonData.length).to.eql(2);\r",
+									"});\r",
+									"pm.test(\"check the names of restaurant\", function () {\r",
+									"   let jsonData = pm.response.json();\r",
+									"   pm.expect(pm.response.text()).to.include(\"Little Napoleon French Cuisine\");\r",
+									"   pm.expect(pm.response.text()).to.include(\"Le Petit French Vietnamese Cuisine\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/restaurants/search/FrEnCh",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants",
+								"search",
+								"FrEnCh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update restaurant with new name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "34baca00-4677-4c2f-bc1c-4f620deb563a",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expect no error message \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"   pm.expect(jsonData).to.not.have.property('errorMessage');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"make sure returned object contains updated name \", function () {\r",
+									"       pm.expect(pm.response.name).to.eql(pm.request.name);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"All-American Restaurant & Bar\",\n    \"rating\": 4.9\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/restaurants/{{restaurantId1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants",
+								"{{restaurantId1}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search restaurants with new name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "42424f5f-169f-4ab0-8113-f617b7c3f833",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expect no error message \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"   pm.expect(jsonData).to.not.have.property('errorMessage');\r",
+									"});\r",
+									"pm.test(\"Expect 1 result\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.be.an('array');\r",
+									"    pm.expect(jsonData.length).to.eql(1);\r",
+									"});\r",
+									"pm.test(\"check the name of restaurant\", function () {\r",
+									"   let jsonData = pm.response.json();\r",
+									"   pm.expect(pm.response.text()).to.include(\"All-American Restaurant & Bar\");\r",
+									"   });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/restaurants/search/All-American",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants",
+								"search",
+								"All-American"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all restaurants",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "47ae98d0-05b4-4860-aa88-3872e3aa2fe9",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expect no error message \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"   pm.expect(jsonData).to.not.have.property('errorMessage');\r",
+									"});\r",
+									"pm.test(\"Expect 6 results\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.be.an('array');\r",
+									"    pm.expect(jsonData.length).to.eql(6);\r",
+									"});\r",
+									"pm.test(\"check the names of restaurants\", function () {\r",
+									"   let jsonData = pm.response.json();\r",
+									"   pm.expect(pm.response.text()).to.include(\"American Restaurant & Bar\",\"Martini's Italian restaurant\",\"Amy's Chinese cuisine\",\"Bombay Indian cuisine & bar\",\"Le Petit French Vietnamese Cuisine\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/restaurants",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "5ac2b69c-e1d0-4881-9e42-6fb6e82e2e2e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "f5b0dcf3-cadd-4f7d-afab-ab3a4751a075",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "test data cleanup",
+			"item": [
+				{
+					"name": "delete restaurant1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8007acff-b430-44d2-a1e6-aabb64a95abf",
+								"exec": [
+									"let restaurantId1 = pm.environment.get(\"restaurantId1\"); \r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"make sure returned object contains restaurantId to be deleted\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id).to.eql(restaurantId1);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/restaurants/{{restaurantId1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants",
+								"{{restaurantId1}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete restaurant2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fe7417aa-1b17-46eb-942c-d211991a608e",
+								"exec": [
+									"let restaurantId2 = pm.environment.get(\"restaurantId2\"); \r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"make sure returned object contains restaurantId to be deleted\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id).to.eql(restaurantId2);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/restaurants/{{restaurantId2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants",
+								"{{restaurantId2}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete restaurant3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e445083d-40c6-4554-8005-421093346d8a",
+								"exec": [
+									"let restaurantId3 = pm.environment.get(\"restaurantId3\"); \r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"make sure returned object contains restaurantId to be deleted\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id).to.eql(restaurantId3);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/restaurants/{{restaurantId3}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants",
+								"{{restaurantId3}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete restaurant4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b57def67-657a-4330-897a-9d30305a03b9",
+								"exec": [
+									"let restaurantId4 = pm.environment.get(\"restaurantId4\"); \r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"make sure returned object contains restaurantId to be deleted\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id).to.eql(restaurantId4);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/restaurants/{{restaurantId4}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants",
+								"{{restaurantId4}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete restaurant5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "adf7a011-a309-4030-8684-1ece6dbf6e45",
+								"exec": [
+									"let restaurantId5 = pm.environment.get(\"restaurantId5\"); \r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"make sure returned object contains restaurantId to be deleted\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id).to.eql(restaurantId5);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/restaurants/{{restaurantId5}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants",
+								"{{restaurantId5}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete restaurant7",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "980b8aaf-d7aa-4689-a9d7-e83c2fc164a6",
+								"exec": [
+									"let restaurantId7 = pm.environment.get(\"restaurantId7\"); \r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"make sure returned object contains restaurantId to be deleted\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id).to.eql(restaurantId7);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/restaurants/{{restaurantId7}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants",
+								"{{restaurantId7}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all restaurants",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2bf56a6d-17a9-4432-b481-bcdeb27564fb",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expect no error message \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.not.have.property('errorMessage');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expect 0 result\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.be.an('array');\r",
+									"    pm.expect(jsonData.length).to.eql(0);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"unset restaurantId env variable\", function () {\r",
+									"  \r",
+									"   pm.environment.unset(\"restaurantId1\");\r",
+									"   pm.environment.unset(\"restaurantId2\");\r",
+									"   pm.environment.unset(\"restaurantId3\");\r",
+									"   pm.environment.unset(\"restaurantId4\");\r",
+									"   pm.environment.unset(\"restaurantId5\");\r",
+									"   pm.environment.unset(\"restaurantId6\");\r",
+									"   pm.environment.unset(\"restaurantId7\");\r",
+									"   \r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/restaurants",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurants"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7d0eac0e-5d4f-462f-822a-bd3bb7d6900f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "59db6aee-f1a4-4de2-b336-62a4a734dcad",
+				"type": "text/javascript",
+				"exec": [
+					"",
+					"",
+					"pm.test(\"response time should not exceed max allowed limit\", function () {",
+					"   pm.expect(pm.response.responseTime).to.be.below(5000);",
+					"});"
+				]
+			}
+		}
+	]
+}
